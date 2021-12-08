@@ -3,12 +3,14 @@ import time
 
 sense = SenseHat();
 
+# Colores de los leds.
 V = [57, 255, 20];
 A = [255, 255, 0];
 N = [255, 112, 40];
 R = [255, 0, 0];
 O = [0, 0, 0];
 
+# Orientación de la matriz.
 sense.set_rotation(180);
 
 '''
@@ -41,6 +43,8 @@ POSICIONES INCLINÓMETRO
 3, 3, 3, 3, 3, 3, 3, 3,
 '''
 
+
+# Posiciones en acelerómetro e inclinómetro.
 led_incl_00 = [
         R, R, O, O, O, O, O, O,
         R, R, O, O, O, O, O, O,
@@ -349,6 +353,238 @@ led_incl_63 = [
         O, O, O, O, O, O, O, O
         ];
 
+led_incl_04 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_14 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, N, N, O, O, O, O, O,
+        O, N, N, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_24 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, A, A, O, O, O, O,
+        O, O, A, A, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_34 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, A, A, O, O, O, 
+        O, O, O, A, A, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_44 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, A, A, O, O,
+        O, O, O, O, A, A, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_54 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, N, N, O,
+        O, O, O, O, O, N, N, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_64 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, R, R,
+        O, O, O, O, O, O, R, R,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_05 = [
+        O, O, O, O, O, O, O, O, 
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_15 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O, 
+        O, O, O, O, O, O, O, O,
+        O, N, N, O, O, O, O, O,
+        O, N, N, O, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_25 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O, 
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, N, N, O, O, O, O,
+        O, O, N, N, O, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_35 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, N, N, O, O, O,
+        O, O, O, N, N, O, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_45 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, N, N, O, O,
+        O, O, O, O, N, N, O, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_55 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O, 
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, N, N, O,
+        O, O, O, O, O, N, N, O,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_65 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, R, R,
+        O, O, O, O, O, O, R, R,
+        O, O, O, O, O, O, O, O
+        ];
+
+led_incl_06 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O,
+        R, R, O, O, O, O, O, O
+        ];
+
+led_incl_16 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, R, R, O, O, O, O, O,
+        O, R, R, O, O, O, O, O
+        ];
+
+led_incl_26 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, R, R, O, O, O, O,
+        O, O, R, R, O, O, O, O
+        ];
+
+led_incl_36 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, R, R, O, O, O,
+        O, O, O, R, R, O, O, O
+        ];
+
+led_incl_46 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, R, R, O, O,
+        O, O, O, O, R, R, O, O
+        ];
+
+led_incl_56 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, R, R, O,
+        O, O, O, O, O, R, R, O
+        ];
+
+led_incl_66 = [
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, O, O,
+        O, O, O, O, O, O, R, R,
+        O, O, O, O, O, O, R, R
+        ];
+
+# Comprobación del estado y color de los leds.
 sense.set_pixels(led_incl_00);
 time.sleep(0.25);
 sense.set_pixels(led_incl_10);
